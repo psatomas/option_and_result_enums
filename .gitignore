@@ -1,0 +1,10 @@
+target/
+**/*.rs.bk
+*.swp
+*.swo
+.rustc_info.json
+debug.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
