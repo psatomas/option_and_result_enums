@@ -6,11 +6,16 @@ fn main() {
     ];
 
     let bass: Option<&String> = music_instruments.get(2);
+    play(bass);
     println!("{:?}", bass);
-    let valid_instrument = bass.expect("Unable to retrieve element");
-    println!("{valid_instrument}");
 
     let invalid_instrument= music_instruments.get(100);
-    println!("{:?}", invalid_instrument);
-    invalid_instrument.expect("Unable to retrieve element");
+    play(invalid_instrument);
+}
+
+fn play(instrument_option: Option<&String> ) {
+    match instrument_option {
+        Option::Some(instrument) => println!("Playing the {instrument}"),
+        Option::None => println!("Singing with my voice"),
+    }
 }
